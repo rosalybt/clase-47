@@ -30,31 +30,40 @@
 
 // console.log(generarGrillaSimple(3, 2))
 
-const items = ['🍉', '🍐', '🍌', '🍇', '🍎', '🍊']
-const numeroAlAzar = (array) => {
-    return Math.floor(Math.random(1, 5) * array.length)
-}
+// const items = ["🍉", "🍐", "🍌", "🍇", "🍎", "🍊"];
+// const numeroAlAzar = (array) => {
+//   return Math.floor(Math.random(1, 5) * array.length);
+// };
 
-const grilla = document.querySelector('.contenedor-grilla')
-const generarGrilla = (filas, columnas, array) => {
-    let matriz = []
+// const grilla = document.querySelector(".contenedor-grilla");
+// const generarGrilla = (filas, columnas, array) => {
+//   let matriz = [];
 
-    for (let i = 0; i < filas; i++) {
-        matriz[i] = []
-        for (let j = 0; j < columnas; j++) {
-            
-            matriz[i][j] = `<div class="grilla">
-                            ${array[numeroAlAzar(array)]}
-                            </div>`
+//   for (let i = 0; i < filas; i++) {
+//     matriz[i] = [];
+//     for (let j = 0; j < columnas; j++) {
+//       matriz[i][j] = `<div class="grilla">
+//                             ${array[numeroAlAzar(array)]}
+//                             </div>`;
 
-            grilla.innerHTML += `${matriz[i][j]}`
-        }
+//       grilla.innerHTML += `${matriz[i][j]}`;
+//     }
+//   }
+//   return grilla;
+// };
+
+// generarGrilla(4, 4, items);
+
+const generarMatrizEscalonada = (filas) => {
+  let matriz = [];
+  const tamnioMatriz = 0;
+  for (let i = 0; i < filas; i++) {
+    matriz[i] = [];
+    for (let j = 0; j < i + 1; j++) {
+      matriz[i][j] = "0";
     }
-    return grilla
-}
+  }
+  return matriz;
+};
 
-generarGrilla(4, 4, items)
-
-
-
-
+console.log(generarMatrizEscalonada(5));
